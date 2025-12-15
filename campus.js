@@ -1,7 +1,7 @@
 let votacoes = JSON.parse(localStorage.getItem("votacoes")) || [];
 const tipoUsuario = "adm"; // "adm" ou "aluno"
 
-// Criar votação com documento
+// Criar votação com documento Fortz
 function criarVotacao() {
     let pergunta = document.getElementById("pergunta").value;
     let arquivo = document.getElementById("documento").files[0];
@@ -38,7 +38,7 @@ function criarVotacao() {
     document.getElementById("documento").value = "";
 }
 
-// Votar
+// Votar renato/fortz
 function votar(index, tipo) {
     if (!votacoes[index].aberta) {
         alert("Esta votação está encerrada.");
@@ -52,14 +52,14 @@ function votar(index, tipo) {
     exibirVotacoes(votacoes);
 }
 
-// Fechar votação
+// Fechar votação Renato
 function fecharVotacao(index) {
     votacoes[index].aberta = false;
     salvarVotacoes();
     exibirVotacoes(votacoes);
 }
 
-// Excluir votação
+// Excluir votação Renato
 function excluirVotacao(index) {
     if (!confirm("Deseja excluir esta votação?")) return;
 
@@ -68,12 +68,12 @@ function excluirVotacao(index) {
     exibirVotacoes(votacoes);
 }
 
-// Salvar
+// Salvar Renato/Forz
 function salvarVotacoes() {
     localStorage.setItem("votacoes", JSON.stringify(votacoes));
 }
 
-// Exibir votações
+// Exibir votações Renato/Fortz
 function exibirVotacoes(lista) {
     const div = document.getElementById("resultado");
     div.innerHTML = "";
@@ -131,7 +131,7 @@ function exibirVotacoes(lista) {
     });
 }
 
-// Pesquisa
+// Pesquisa Renato
 function pesquisar() {
     const texto = document.getElementById("pesquisa").value.toLowerCase();
 
@@ -142,7 +142,7 @@ function pesquisar() {
     exibirVotacoes(filtradas);
 }
 
-// Carregar
+// Carregar Renato
 window.onload = () => {
     exibirVotacoes(votacoes);
 };
